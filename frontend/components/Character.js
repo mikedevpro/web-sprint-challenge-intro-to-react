@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Character() { // ❗ Add the props
   // ❗ Create a state to hold whether the homeworld is rendering or not
