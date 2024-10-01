@@ -39,15 +39,15 @@ function App() {
   // ❗ Create state to hold the data from the API
   // ❗ Create effects to fetch the data and put it in state
   return (
-    <div class>
+    <div className='character-card'>
       <h2>Star Wars Characters</h2>
       <p>See the README of the project for instructions on completing this challenge</p>
-      <h3 class>
+      <h3 className='character-name'>
         {
           people.map(pe => <p key={pe.id}>{pe.name}</p>)
         }
       </h3>
-      <p class>
+      <p>
         {
           planets.map(pl => <p key={pl.id}>{pl.name}</p>)
         }

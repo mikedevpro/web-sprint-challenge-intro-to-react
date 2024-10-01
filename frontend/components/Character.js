@@ -1,6 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
-function Character() { // ❗ Add the props
+function Character() { 
+  const [planets] = useState([
+    {
+      
+    }
+  ])
+  // ❗ Add the props
   // ❗ Create a state to hold whether the homeworld is rendering or not
   // ❗ Create a "toggle" click handler to show or remove the homeworld
   return (
