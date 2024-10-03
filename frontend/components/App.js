@@ -13,7 +13,7 @@ function App() {
     function getPeople() {
       axios.get(urlPeople)
       .then(res => {
-        console.log(res.data)
+        console.log(res.name)
         setPeople(res.data)
       })
       .catch(err => {
@@ -27,8 +27,8 @@ function App() {
     function getPlanets() {
       axios.get(urlPlanets)
       .then(res => {
-        console.log(res.data)
-        setPlanets(res.data)
+        console.log(res.id.name)
+        setPlanets(res.id.name)
       })
       .catch(err => {
         console.log(err.message)
@@ -39,23 +39,23 @@ function App() {
   // ❗ Create state to hold the data from the API
   // ❗ Create effects to fetch the data and put it in state
   return (
-    <div className='character-card'>
+    
+    <div>
       <h2>Star Wars Characters</h2>
       <p>See the README of the project for instructions on completing this challenge</p>
+      <div className='character-card'>
       <h3 className='character-name'>
-        {
-          people.map(pe => <p key={pe.id}>{pe.name}</p>)
-        }
+        {people.map((people) => (<p key={people.id}>{people.name}</p>))}
       </h3>
+
       <p>
-        {
-          planets.map(pl => <p key={pl.id}>{pl.name}</p>)
-        }
+        {planets.map((planets) => (<p key={planets.id}>{planets.name}</p>))}
       </p>
       
         
       
       {/* ❗ Map over the data in state, rendering a Character at each iteration */}
+    </div>
     </div>
   )
 }
