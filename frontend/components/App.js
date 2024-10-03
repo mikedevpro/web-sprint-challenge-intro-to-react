@@ -13,7 +13,7 @@ function App() {
     function getPeople() {
       axios.get(urlPeople)
       .then(res => {
-        console.log(res.name)
+        console.log(res.data)
         setPeople(res.data)
       })
       .catch(err => {
@@ -27,8 +27,8 @@ function App() {
     function getPlanets() {
       axios.get(urlPlanets)
       .then(res => {
-        console.log(res.id.name)
-        setPlanets(res.id.name)
+        console.log(res.data)
+        setPlanets(res.data)
       })
       .catch(err => {
         console.log(err.message)
@@ -45,11 +45,11 @@ function App() {
       <p>See the README of the project for instructions on completing this challenge</p>
       <div className='character-card'>
       <h3 className='character-name'>
-        {people.map((people) => (<p key={people.id}>{people.name}</p>))}
+        {people.map(people => (<p key={people.id}>{people.name}</p>))}
       </h3>
 
       <p>
-        {planets.map((planets) => (<p key={planets.id}>{planets.name}</p>))}
+        {planets.map((planets) => (<p key={planets.id}><span className='character-planet'>{planets.name}</span></p>))}
       </p>
       
         
