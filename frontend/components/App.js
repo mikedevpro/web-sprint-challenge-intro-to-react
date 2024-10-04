@@ -48,7 +48,7 @@ function App() {
         {people.map(people => (<p key={people.id}>{people.name}</p>))}
       </h3>
 
-      <p>
+      <p className='character-planet'>
         {planets.map((planets) => (<p key={planets.id}><span className='character-planet'>{planets.name}</span></p>))}
       </p>
       
