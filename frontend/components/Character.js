@@ -16,4 +16,4 @@ function Character() {
   )
 }
 
-export default Character(props.name)
+export default Character
