@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Character from './Character'
 
-const urlPlanets = 'http://localhost:9009/api/planets'
-const urlPeople = 'http://localhost:9009/api/people'
 
 function App() {
+  const urlPlanets = 'http://localhost:9009/api/planets'
+  const urlPeople = 'http://localhost:9009/api/people'
+
   const [planets, setPlanets] = useState([])
   const [people, setPeople] = useState([])
+
 
   useEffect(() => {
     function getPeople() {
@@ -44,13 +46,14 @@ function App() {
       <h2>Star Wars Characters</h2>
       <p>See the README of the project for instructions on completing this challenge</p>
       <div className='character-card'>
-      <h3 className='character-name'>
-        {people.map(people => (<p key={people.id}>{people.name}</p>))}
-      </h3>
 
-      <p className='character-planet'>
-        {planets.map((planets) => (<p key={planets.id}><span className='character-planet'>{planets.name}</span></p>))}
-      </p>
+        <h3 className='character-name'>
+          {people.map(pp => (<p key={pp.id}>{pp.name}</p>))}
+        </h3>
+
+        
+          {planets.map(pl => (<p key={pl.homeworld}><span className='character-planet'>Planet: {pl.name}</span></p>))}
+        
       
         
       
