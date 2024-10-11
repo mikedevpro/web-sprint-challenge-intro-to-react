@@ -10,6 +10,8 @@ function App() {
   const [planets, setPlanets] = useState([])
   const [people, setPeople] = useState([])
 
+  
+
 
   useEffect(() => {
     function getPeople() {
@@ -47,12 +49,12 @@ function App() {
       <p>See the README of the project for instructions on completing this challenge</p>
       <div className='character-card'>
 
-        <h3 className='character-name'>
-          {people.map(pp => (<p key={pp.id}>{pp.name}</p>))}
-        </h3>
-
         
-          {planets.map(pl => (<p key={pl.homeworld}><span className='character-planet'>Planet: {pl.name}</span></p>))}
+          {people.map(char => (<h3 className='character-name'>{char.name}</h3>))}
+        
+          {planets.map(pl => (<p key={pl.id}>
+          Planet: <span className='character-planet'>{pl.name}</span></p>))}
+        
         
       
         
