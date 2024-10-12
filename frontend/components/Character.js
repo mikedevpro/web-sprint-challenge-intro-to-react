@@ -1,50 +1,15 @@
 import React, { useState } from 'react'
 
-function Character(props) { 
-  
-  const { planets } = props;
-  const { people } = props;
-  // ❗ Add the props
+function Character ({data}) { 
+const [planetsShow, setPlanetsShow] = useState (false);
+const toggle = () => setPlanetsShow (!planetsShow)
 
-  // ❗ Create a state to hold whether the homeworld is rendering or not
-  // function homeworldElement() {
-  //   const [isRendering, setIsRendering] = useState(true);
-
-  //   useEffect(() => {
-  //     setTimeout(() => {
-  //       setIsLoading(false);
-  //     }, 2000);
-  //   }, []);
-
-  //   return (
-  //     <div>
-  //       {isLoading ? (
-  //         <p>Loading homeworld...</p>
-  //       ) : (
-  //         <HomeworldData />
-  //       )}
-  //     </div>
-  //   );
-  // }
-  // ❗ Create a "toggle" click handler to show or remove the homeworld
-  // function toggleHomeworld () {
-  //   const homeworldElement = document.getElementById('homeworld');
-
-  //   if (homeworldElement.style.display === 'none') {
-  //     homeworldElement.style.display = 'block';
-  //   } else {
-  //     homeworldElement.style.display = 'none';
-  //   }
-  // }
-    
-      
-    //{/* Use the same markup with the same attributes as in the mock */}
-    //  return (
-    //    <div className="character-card">
-    //    <h3>className="character-name"</h3>
-    //    <p>className="character-planet"</p>
-    //    </div>
-    //  )
+      return (
+        <div className="character-card" onClick={toggle}>
+        <h3 className="character-name">{data.name}</h3>
+        {planetsShow && <p>Planet: <span className="character-planet">{data.homeworld.name}</span></p>} 
+        </div>
+      )
   
 }
 
